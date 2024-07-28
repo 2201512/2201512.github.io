@@ -24,27 +24,42 @@
 			ul.social {
 				display: flex;
 				gap: 10px;
+				padding: 0;
+				list-style: none;
 			}
 			.image-container {
 				display: flex;
+				flex-direction: column;
 				align-items: center;
+				text-align: center;
 			}
 			.image-container img {
 				border-radius: 50%;
-				margin-right: 20px;
+				margin-bottom: 20px;
+				width: 80%;
+				max-width: 150px;
 			}
-			.coursework-list {
+			.coursework-list, .languages-list, .tools-list {
 				display: grid;
 				grid-template-columns: 1fr 1fr;
 				gap: 10px;
 			}
-			.languages-tools-list {
-				display: flex;
-				flex-direction: column;
-				gap: 10px;
+			@media (max-width: 768px) {
+				.coursework-skills {
+					flex-direction: column;
+				}
+				.coursework-list, .languages-list, .tools-list {
+					grid-template-columns: 1fr;
+				}
+				.image-container {
+					flex-direction: column;
+				}
+				.image-container img {
+					width: 80%;
+					max-width: 300px;
+				}
 			}
 		</style>
-
 	</head>
 	<body class="is-preload">
 
@@ -58,10 +73,12 @@
 			</ul>
 		</nav>
 
-<article id="top" class="wrapper style1">
+		<!-- Home -->
+		<article id="top" class="wrapper style1">
 			<div class="container">
-				<div class="image-container">
-					<span class="image fit"><img src="images/photo.jpeg" alt="My Photo" width="400" /></span>
+				<div class="image">
+					<span class="image featured"><img src="images/photo.jpeg" alt="My Photo" width="400" /></span>
+				</div>
 					<div>
 						<header>
 							<h1>Yugendren S/O Sooriya Moorthi</h1>
@@ -72,7 +89,8 @@
 							<li><a href="https://www.linkedin.com/in/yugendren" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
 							<li><a href="https://github.com/2201512" class="icon brands fa-github"><span class="label">Github</span></a></li>
 						</ul>
-						<div class="container.medium">
+						<div class="container">
+							<div class="container right">
 								<h3>Coursework</h3>
 								<ul class="coursework-list">
 									<li>System Engineering</li>
@@ -87,11 +105,19 @@
 									<li>Robotics</li>
 									<li>Mechanical Design</li>
 								</ul>
-								<h3>Skills</h3>
-								<ul>
-									<li>Languages: C/C++, Python, JavaScript, SQL, HTML/CSS, Latex, Spin Language</li>
-									<li>Tools: ROS1, ROS2, Gazebo, RViz, Solidworks, Visual Components, STM32, Raspberry Pi, Arduino, Git/GitHub, Linux, Pytorch, Anaconda, JSON, JIRA, Bitbucket, Confluence, Excel</li>
+							</div>
+							<div class="container right">
+								<h3>Languages</h3>
+								<ul class="languages-list">
+									<li>C/C++</li>
+									<li>Python</li>
+									<li>JavaScript</li>
+									<li>SQL</li>
+									<li>HTML/CSS</li>
+									<li>Latex</li>
+									<li>Spin Language</li>
 								</ul>
+							</div>
 						</div>
 						<a href="#work" class="button large scrolly">My Credentials</a>
 					</div>
@@ -181,12 +207,12 @@
 							<p>Engineered a system for optimizing the use of renewable energy sources in a residential setting.</p>
 						</article>
 					</div>
-					</div>
-					<footer>
-						<a href="#contact" class="button large scrolly">Get in touch with me</a>
-					</footer>
 				</div>
-			</article>
+				<footer>
+					<a href="#contact" class="button large scrolly">Get in touch with me</a>
+				</footer>
+			</div>
+		</article>
 
 		<!-- Contact -->
 		<article id="contact" class="wrapper style4">

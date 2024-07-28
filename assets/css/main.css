@@ -221,12 +221,29 @@ input, select, textarea {
 			font-size: 1.25em;
 		}
 
+
+
 /* Container */
+
 
 	.container {
 		margin: 0 auto;
 		max-width: calc(100% - 50px);
 		width: 2300px;
+	}
+	.container.left {
+		margin-left: 0;
+		margin-right: auto;
+	}
+
+	.container.right {
+		margin-left: auto;
+		margin-right: 0;
+	}
+
+	.container.center {
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 		.container.medium {
@@ -1634,7 +1651,7 @@ input, select, textarea {
 
 		.image.fit {
 			display: block;
-			width: 100%;
+			width: 0%;
 		}
 
 		.image.featured {
@@ -1995,7 +2012,7 @@ input, select, textarea {
 
 		.wrapper.style1 {
 			background-image: none;
-			background-color: #fff;
+			background-color: #f5b78b;
 		}
 
 		.wrapper.style2 {
