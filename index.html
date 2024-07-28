@@ -1,156 +1,876 @@
-<!DOCTYPE HTML>
-<!--
-	Miniport by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Miniport by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
 
-		<!-- Nav -->
-			<nav id="nav">
-				<ul class="container">
-					<li><a href="#top">Top</a></li>
-					<li><a href="#work">Work</a></li>
-					<li><a href="#portfolio">Portfolio</a></li>
-					<li><a href="#contact">Contact</a></li>
-				</ul>
-			</nav>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yugendren's E-Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+  body {
+              font-family: 'Roboto', sans-serif;
+              margin: 0;
+              padding: 0;
+              overflow-x: hidden;
+              scroll-behavior: smooth;
+              background-image: url('path_to_your_background_image.jpg'); /* Replace with your background image path */
+              background-size: cover;
+              background-attachment: fixed;
+              color: #f8f9fa;
+          }
+      
+          /* Card Styles */
+          .card {
+              margin-bottom: 20px;
+              background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent background */
+              border: none;
+              transition: transform 0.3s;
+          }
+      
+          .card:hover {
+              transform: scale(1.05);
+          }
+      
+          .card-body {
+              text-align: center;
+              padding: 20px;
+          }
+      
+          .icon-box {
+              font-size: 3em;
+              color: #007bff;
+              margin-bottom: 15px;
+          }
+      
+          .card h3 {
+              font-size: 1.5em;
+              color: #f8f9fa;
+              margin-bottom: 10px;
+          }
+      
+          .card p {
+              color: #bbb;
+          }
+      
+          /* Section Title */
+          .details-section .title {
+              margin-bottom: 30px;
+          }
+      
+          .details-section .title h2 {
+              font-size: 2.5em;
+              color: #f8f9fa;
+          }
+      
+          .details-section .title .highlight {
+              color: #007bff;
+          }
+      
+          .details-section .title .border {
+              width: 60px;
+              height: 3px;
+              background: #007bff;
+              margin: 0 auto;
+              display: block;
+              margin-top: 10px;
+          }
+      
+          /* Background and Layout */
+          .details-section {
+              padding: 40px 20px;
+              background-color: rgba(34, 34, 34, 0.8); /* Semi-transparent background */
+              display: flex;
+              justify-content: space-around;
+              flex-wrap: wrap;
+              max-width: 100%; /* Ensures it spans the full width */
+          }
+      
+          .details {
+              flex: 1;
+              margin: 20px;
+              text-align: left;
+              background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent background */
+              padding: 20px;
+              border-radius: 10px;
+              min-width: 300px; /* Ensures a minimum width for better layout */
+          }
+      
+          .details h2 {
+              font-size: 1.5em;
+              margin-bottom: 10px;
+              color: #f8f9fa;
+              text-align: center; /* Center the heading */
+          }
+      
+          .container {
+              max-width: 1140px;
+          }
+      
+          .container-fluid {
+              padding: 0;
+              margin: 20px 0;
+          }
+      
+          .profile-img {
+              width: 150px;
+              height: 150px;
+              border-radius: 50%;
+              margin-bottom: 20px;
+          }
+      
+          .section-header {
+              padding-bottom: 10px;
+              margin-bottom: 20px;
+              font-size: 2.5em; /* Increased font size */
+              font-weight: bold; /* Make the font bold */
+              color: #007bff;
+              text-align: center; /* Center the text */
+          }
+      
+          .card-hover {
+              transition: transform 0.3s;
+              border: 2px solid #007bff;
+              margin-bottom: 20px;
+              background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent background */
+          }
+      
+          .card-hover:hover {
+              transform: scale(1.05);
+          }
+      
+          .experience-grid,
+          .project-grid {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 20px;
+              padding: 20px;
+              margin: 0 20px;
+          }
+      
+          .experience-card,
+          .project-card {
+              flex: 1 1 calc(33.333% - 40px);
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              height: auto;
+              background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent background */
+          }
+      
+          .experience-card img,
+          .project-card img {
+              width: 100%;
+              height: 200px;
+              object-fit: cover;
+              margin-bottom: 10px;
+          }
+      
+          .experience-card .card-body,
+          .project-card .card-body {
+              flex-grow: 1;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+          }
+      
+          .navbar {
+              position: fixed;
+              width: 100%;
+              z-index: 1000;
+              top: 0;
+              background-color: rgba(51, 51, 51, 0.9); /* Semi-transparent background */
+              padding: 10px; /* Add padding to the entire navbar */
+          }
+      
+          /* Custom CSS to show dropdown on hover */
+          .navbar .dropdown {
+              position: relative;
+          }
+      
+          .navbar .dropdown-menu {
+              display: none;
+              position: absolute;
+              top: 100%;
+              left: 0;
+              z-index: 1000;
+              float: left;
+              min-width: 10rem;
+              padding: 0.5rem 0;
+              margin: 0.125rem 0 0;
+              font-size: 1rem;
+              color: #212529;
+              text-align: left;
+              list-style: none;
+              background-color: #fff;
+              background-clip: padding-box;
+              border: 1px solid rgba(0, 0, 0, 0.15);
+              border-radius: 0.25rem;
+              box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
+          }
+      
+          .navbar .dropdown:hover .dropdown-menu {
+              display: block;
+          }
+      
+          .navbar .dropdown-toggle::after {
+              display: none;
+          }
+      
+          .navbar-nav .nav-item {
+              margin-left: 10px; /* Add margin to the left of each item */
+              margin-right: 10px; /* Add margin to the right of each item */
+          }
+      
+          .navbar-nav .nav-link {
+              padding: 10px 10px; /* Add padding to each nav link */
+              color: #f8f9fa !important;
+          }
+      
+          .navbar-light .navbar-nav .nav-link:focus,
+          .navbar-light .navbar-nav .nav-link:hover {
+              color: #007bff !important;
+          }
+      
+          .top-section {
+              background-color: rgba(26, 26, 26, 0.8); /* Semi-transparent background */
+              padding: 120px 20px 60px; /* Added padding-top to ensure visibility */
+              text-align: center;
+              margin-bottom: 40px;
+          }
+      
+          .top-section img {
+              width: 400px;
+              height: 400px;
+              border-radius: 50%;
+          }
+      
+          .top-section h1 {
+              font-size: 2.5em;
+              margin-top: 10px;
+          }
+      
+          .top-section p {
+              font-size: 1.2em;
+              color: #bbb;
+              margin-top: 10px;
+          }
+      
+          .cv-section {
+              padding: 40px 20px;
+              background-color: rgba(34, 34, 34, 0.8); /* Semi-transparent background */
+              margin-bottom: 40px;
+          }
+      
+          .cv-section h2 {
+              font-size: 2em;
+              color: #007bff;
+          }
+      
+          .cv-section p {
+              font-size: 1.2em;
+              color: #bbb;
+          }
+      
+          .details-section {
+              padding: 40px 20px;
+              background-color: rgba(34, 34, 34, 0.8); /* Semi-transparent background */
+              display: flex;
+              justify-content: space-around;
+              flex-wrap: wrap;
+              max-width: 100%; /* Ensures it spans the full width */
+          }
+      
+          .details {
+              flex: 1;
+              margin: 20px;
+              text-align: left;
+              background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent background */
+              padding: 20px;
+              border-radius: 10px;
+              min-width: 300px; /* Ensures a minimum width for better layout */
+          }
+      
+          .details h2 {
+              font-size: 2em;
+              margin-bottom: 10px;
+              color: #f8f9fa;
+              text-align: center; /* Center the heading */
+          }
+      
+          .skills-coursework {
+              display: flex;
+              justify-content: space-between;
+              flex-wrap: wrap; /* Ensures the columns wrap on smaller screens */
+          }
+      
+          .column {
+              flex: 1;
+              padding: 10px;
+              min-width: 200px; /* Ensures columns have a minimum width */
+          }
+      
+          .column h4 {
+              font-size: 1.2em;
+              margin-bottom: 10px;
+              border-bottom: 2px solid #007bff;
+              text-align: center; /* Center the heading */
+          }
+      
+          .column ul {
+              list-style-type: none;
+              padding: 0;
+          }
+      
+          .column ul li {
+              margin-bottom: 10px;
+              font-size: 1em;
+          }
+      
+          #contact-section {
+              background-color: rgba(26, 26, 26, 0.8); /* Semi-transparent background */
+              padding: 40px 20px;
+              text-align: center;
+              margin: 20px 0;
+          }
+      
+          .contact-info {
+              font-size: 1.2em;
+              color: #f8f9fa;
+          }
+      
+          .contact-info p {
+              margin: 10px 0;
+          }
+      
+          .contact-info i {
+              margin-right: 10px;
+              color: #007bff;
+          }
+      
+          .contact-info a {
+              color: #007bff;
+              text-decoration: none;
+          }
+      
+          .contact-info a:hover {
+              text-decoration: underline;
+          }
+      
+          .btn-know-more {
+              display: inline-block;
+              padding: 5px 10px; /* Adjust padding to fit the text */
+              font-size: 1em;
+              color: #fff;
+              background-color: #007bff;
+              border: none;
+              border-radius: 5px;
+              text-decoration: none;
+              cursor: pointer;
+          }
+      
+          .btn-know-more:hover {
+              background-color: #00b330;
+          }
+      
+          .skills-coursework {
+              display: flex;
+              justify-content: space-between;
+              margin-top: 20px;
+          }
+      
+          .column {
+              flex: 1;
+              padding: 10px;
+          }
+      
+          .column h4 {
+              font-size: 1.2em;
+              margin-bottom: 10px;
+              border-bottom: 2px solid #007bff;
+          }
+      
+          .column ul {
+              list-style-type: none;
+              padding: 0;
+          }
+      
+          .column ul li {
+              margin-bottom: 10px;
+              font-size: 1em;
+          }
+      
+          .vertical-line {
+              border-left: 2px solid #007bff;
+              height: auto;
+          }
+  
+          /*education content*/
+          .education-item {
+              display: flex;
+              align-items: center;
+              margin-bottom: 15px;
+          }
+  
+          .education-logo {
+              width: 100px; /* Adjust size as needed */
+              height: auto;
+              margin-right: 15px;
+          }
+  
+          .education-content {
+              flex-grow: 1;
+          }
+  
+          .degree {
+              font-size: 1.5em; /* Increase font size for school name */
+              color: #f8f9fa;
+          }
+  
+          .education-content p {
+              font-size: 1.6em; /* Increase font size for degree */
+              color: #f8f9fa;
+              margin: 5px 0;
+          }
+  
+          .education-gpa {
+              font-size: 1.5em; /* Increase font size for GPA */
+              color: #bbb;
+              text-align: right;
+              flex-shrink: 0;
+              padding-left: 20px;
+          }
+          /*CourseWork content*/
+  
+          .coursework-columns {
+              display: flex;
+              justify-content: center; /* Center the columns horizontally */
+              align-items: center; /* Center the columns vertically */
+              gap: 10px; /* Add space between the columns */
+          }
+  
+          .coursework-columns ul {
+              flex: 1;
+              margin: 0 10px;
+              list-style-type: none;
+              padding: 0;
+              text-align: center; /* Center the list items horizontally */
+          }
+  
+          .coursework-columns ul li {
+              margin-bottom: 10px;
+              font-size: 1.3em;
+              color: #f8f9fa;
+          }
+          /* CSS for Experience Item */
+          /* Flex container for experience items */
+          .experience-item {
+              display: flex;
+              align-items: center;
+              margin-bottom: 30px;
+          }
+  
+          /* Adjust image size and spacing */
+          .company-logo {
+              width: 100px; /* Adjust size as needed */
+              height: 150px; /* Increase height as desired */
+              margin-right: 15px;
+          }
+  
+          /* Experience content styles */
+          .experience-content {
+              flex-grow: 1;
+          }
+  
+          .card-img-top{
+              width: 200px;
+              height: 200px;
+              object-fit: cover;
+              margin-bottom: 10px;
+          }
+  </style>
+</head>
 
-		<!-- Home -->
-			<article id="top" class="wrapper style1">
-				<div class="container">
-					<div class="row">
-						<div class="col-4 col-5-large col-12-medium" style="float: left; margin-right: 20px;">
-							<span class="image fit"><img src="images/photo.jpeg" alt="" /></span>
-						</div>
-						<div class="col-8 col-7-large col-12-medium">
-							<header>
-								<h1>Hi. I'm <strong>Yugendren</strong>.</h1>
-							</header>
-							<p>And this is <strong>my E-Portfolio</strong>, to showcase my Engineering projects. These include both projects undertaken in Educational institutions, Work and Side Projects.</p>
-							</header>
-							<strong> Email: 2201512@sit.singaporetech.edu.sg</strong>
-							<ul class="social">
-								<li><a href="https://www.linkedin.com/in/yugendren" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-								<li><a href="https://github.com/2201512" class="icon brands fa-github"><span class="label">Github</span></a></li>
-							</ul>
-							<a href="#work" class="button large scrolly">My Credentials</a>
-						</div>
-					</div>
-				</div>
-			</article>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white" href="#">Yugendren</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon">
+        </span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#profile-section">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#cv-section">CV</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#cv-section">Resume</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#projects-section" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Projects</a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li>
+                <a class="dropdown-item" href="#project1">Project 1</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#project2">Project 2</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#project3">Project 3</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#project4">Project 4</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#project5">Project 5</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#project6">Project 6</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#experience-section" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Experience</a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li>
+                <a class="dropdown-item" href="#experience1">Experience 1</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#experience2">Experience 2</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#experience3">Experience 3</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#experience4">Experience 4</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact-section">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Top Section -->
+  <div class="top-section" id="profile-section" data-aos="fade-up">
+    <img src="images/photo.jpeg" alt="Profile Picture">
+    <h1>Yugendren S/O Sooriya Moorthi</h1>
+    <p>Robotics Systems Engineer with a passion for innovation and technology. Skilled in ROS, Python, and system engineering processes.</p>
+  </div>
+  <!-- CV Section -->
+  <div class="cv-section" id="cv-section" data-aos="fade-up">
+    <div class="container">
+      <h2>Short CV</h2>
+      <p>A brief overview of your career, highlighting key accomplishments and experiences.</p>
+    </div>
+  </div>
+  <!-- Details Section -->
+  <div class="details-section" id="education-section" data-aos="fade-up">
+    <div class="details education-box">
+      <h2>Education</h2>
+      <div class="education-item">
+        <img src="images/sitlogo.png" alt="Singapore Institute of Technology Logo" class="education-logo">
+        <div class="education-content">
+          <p class="degree">
+            <strong>Singapore Institute of Technology</strong>
+          </p>
+          <p>Bachelor's in Robotics Systems Engineering (Provost List)</p>
+        </div>
+        <div class="education-gpa">
+          <p>Current cGPA: 4.69/5.0</p>
+        </div>
+      </div>
+      <div class="education-item">
+        <img src="images/TPLOGO.jpg" alt="Temasek Polytechnic Logo" class="education-logo">
+        <div class="education-content">
+          <p class="degree">
+            <strong>Temasek Polytechnic</strong>
+          </p>
+          <p>Diploma in Aerospace Engineering</p>
+        </div>
+        <div class="education-gpa">
+          <p>cGPA: 3.29/4.0</p>
+        </div>
+      </div>
+    </div>
+    <div class="details skills-box" class="container-fluid mt-5" data-aos="fade-up">
+      <h2>Coursework</h2>
+      <div class="coursework-columns">
+        <ul>
+          <li>Robot Operating System (ROS 1 & ROS 2)</li>
+          <li>System Engineering</li>
+          <li>Project Management</li>
+          <li>Machine Learning</li>
+          <li>Scrum</li>
+          <li>Prototyping</li>
+        </ul>
+        <ul>
+          <li>Data Structures & Algorithms</li>
+          <li>Embedded Systems</li>
+          <li>Object-Oriented Programming</li>
+          <li>Robotics</li>
+          <li>Mechanical Design</li>
+          <li>Agile Methodolgy</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- Experience Section -->
+  <div id="experience-section" class="container-fluid mt-5" data-aos="fade-up">
+    <h2 class="section-header">Experience</h2>
+    <div class="experience-grid no-scrollbar">
+      <div class="card experience-card card-hover">
+        <img src="images/experience1.jpg" class="card-img-top" alt="Experience 1">
+        <div class="card-body">
+          <h3 class="card-title">Intern - SIT-NVIDIA</h3>
+          <p class="card-text">
+            <ul>
+              <li>Research on multimodal large language models for video embeddings</li>
+              <li>Documented research findings and scripts in JIRA, Bitbucket, and Confluence</li>
+              <li>Collaborated with a team of engineers to develop and optimize machine learning models</li>
+            </ul>
+          </p>
+          <a href="#" class="btn-know-more">Learn More</a>
+        </div>
+      </div>
+      <div class="card experience-card card-hover">
+        <img src="images/experience2.jpg" class="card-img-top" alt="Experience 2">
+        <div class="card-body">
+          <h3 class="card-title">Intern - Collins Aerospace</h3>
+          <p class="card-text">
+            <ul>
+              <li>Worked with the Calibration Lab to ensure flow of measurement gauges for aeronautical components</li>
+              <li>Documented processes in Excel to enhance efficiency</li>
+              <li>Assisted in the development of calibration procedures for new equipment</li>
+            </ul>
+          </p>
+          <a href="#" class="btn-know-more">Learn More</a>
+        </div>
+      </div>
+      <div class="card experience-card card-hover">
+        <img src="images/experience3.jpg" class="card-img-top" alt="Experience 3">
+        <div class="card-body">
+          <h3 class="card-title">Intelligence Specialist - Singapore Armed Forces</h3>
+          <p class="card-text">
+            <ul>
+              <li>Led an operational team, troubleshooting technologies on-site</li>
+              <li>Successfully achieved mission objectives under high-stress conditions</li>
+              <li>Developed and implemented training programs for team members</li>
+            </ul>
+          </p>
+          <a href="#" class="btn-know-more">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Projects Section -->
+  <div id="projects-section" class="container-fluid mt-5" data-aos="fade-up">
+    <h2 class="section-header">Projects</h2>
+    <div class="project-grid no-scrollbar">
+      <div class="card project-card card-hover">
+        <img src="images/SEP@logo.png" class="card-img-top" alt="Project 1">
+        <div class="card-body">
+          <h3 class="card-title">System Engineering Project 2 (Food Printing System)</h3>
+          <p class="card-text">Details about project 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <div class="skills-coursework">
+            <div class="column">
+              <h4>Coursework</h4>
+              <ul>
+                <li>3D Printing</li>
+                <li>Automation Systems</li>
+              </ul>
+            </div>
+            <div class="vertical-line">
+            </div>
+            <div class="column">
+              <h4>Skills</h4>
+              <ul>
+                <li>CAD Design</li>
+                <li>Prototyping</li>
+              </ul>
+            </div>
+          </div>
+          <a href="system_engineering_project_2.html" class="btn-know-more">Learn More</a>
+        </div>
+      </div>
+      <div class="card project-card card-hover">
+        <img src="images/project2.jpg" class="card-img-top" alt="Project 2">
+        <div class="card-body">
+          <h3 class="card-title">Industrial Innovation Project - Bollore Logistics</h3>
+          <p class="card-text">Details about project 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <div class="skills-coursework">
+            <div class="column">
+              <h4>Coursework</h4>
+              <ul>
+                <li>Supply Chain Management</li>
+                <li>Automation Systems</li>
+              </ul>
+            </div>
+            <div class="vertical-line">
+            </div>
+            <div class="column">
+              <h4>Skills</h4>
+              <ul>
+                <li>Process Optimization</li>
+                <li>Data Analysis</li>
+              </ul>
+            </div>
+          </div>
+          <a href="#" class="btn-know-more">Learn More</a>
+        </div>
+      </div>
+      <div class="card project-card card-hover">
+        <img src="images/project3.jpg" class="card-img-top" alt="Project 3">
+        <div class="card-body">
+          <h3 class="card-title">Embedded Line Follower</h3>
+          <p class="card-text">Details about project 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <div class="skills-coursework">
+            <div class="column">
+              <h4>Coursework</h4>
+              <ul>
+                <li>Embedded Systems</li>
+                <li>Control Systems</li>
+              </ul>
+            </div>
+            <div class="vertical-line">
+            </div>
+            <div class="column">
+              <h4>Skills</h4>
+              <ul>
+                <li>Microcontroller Programming</li>
+                <li>Sensors Integration</li>
+              </ul>
+            </div>
+          </div>
+          <a href="#" class="btn-know-more">Learn More</a>
+        </div>
+      </div>
+      <div class="card project-card card-hover">
+        <img src="images/project4.jpg" class="card-img-top" alt="Project 4">
+        <div class="card-body">
+          <h3 class="card-title">Maze Solver in ROS 2</h3>
+          <p class="card-text">Details about project 4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <div class="skills-coursework">
+            <div class="column">
+              <h4>Coursework</h4>
+              <ul>
+                <li>Robotics</li>
+                <li>Path Planning</li>
+              </ul>
+            </div>
+            <div class="vertical-line">
+            </div>
+            <div class="column">
+              <h4>Skills</h4>
+              <ul>
+                <li>ROS 2</li>
+                <li>Navigation Algorithms</li>
+              </ul>
+            </div>
+          </div>
+          <a href="#" class="btn-know-more">Learn More</a>
+        </div>
+      </div>
+      <div class="card project-card card-hover">
+        <img src="images/project5.jpg" class="card-img-top" alt="Project 5">
+        <div class="card-body">
+          <h3 class="card-title">Navigation AMR in ROS 1</h3>
+          <p class="card-text">Details about project 5. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <div class="skills-coursework">
+            <div class="column">
+              <h4>Coursework</h4>
+              <ul>
+                <li>Robotics</li>
+                <li>Automation</li>
+              </ul>
+            </div>
+            <div class="vertical-line">
+            </div>
+            <div class="column">
+              <h4>Skills</h4>
+              <ul>
+                <li>ROS 1</li>
+                <li>Automation</li>
+              </ul>
+            </div>
+          </div>
+          <a href="#" class="btn-know-more">Learn More</a>
+        </div>
+      </div>
+      <div class="card project-card card-hover">
+        <img src="images/project6.jpg" class="card-img-top" alt="Project 6">
+        <div class="card-body">
+          <h3 class="card-title">Embedded Follower AMR</h3>
+          <p class="card-text">Details about project 6. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <div class="skills-coursework">
+            <div class="column">
+              <h4>Coursework</h4>
+              <ul>
+                <li>Embedded Systems</li>
+                <li>Automation</li>
+              </ul>
+            </div>
+            <div class="vertical-line">
+            </div>
+            <div class="column">
+              <h4>Skills</h4>
+              <ul>
+                <li>Microcontroller Programming</li>
+                <li>System Integration</li>
+              </ul>
+            </div>
+          </div>
+          <a href="#" class="btn-know-more">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Contact Section -->
+  <div id="contact-section" class="container-fluid mt-5" data-aos="fade-up">
+    <h2 class="section-header">Contact</h2>
+    <div class="contact-info">
+      <p>
+        <i class="fas fa-envelope"></i>Email:
+        <a href="mailto:2201512@sit.singaporetech.edu.sg">2201512@sit.singaporetech.edu.sg</a>
+      </p>
+      <p>
+        <i class="fab fa-linkedin"></i>LinkedIn:
+        <a href="https://www.linkedin.com/in/yugendren" target="_blank">linkedin.com/in/yugendren</a>
+      </p>
+      <p>
+        <i class="fab fa-github"></i>GitHub:
+        <a href="https://github.com/2201512" target="_blank">github.com/2201512</a>
+      </p>
+    </div>
+  </div>
+  <!-- FontAwesome for Icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+  <script>
+  AOS.init({
+              duration: 1200,
+          });
+          let prevScrollpos = window.pageYOffset;
+          window.onscroll = function() {
+              let currentScrollPos = window.pageYOffset;
+              if (prevScrollpos > currentScrollPos) {
+                  document.querySelector(".navbar").style.top = "0";
+              } else {
+                  document.querySelector(".navbar").style.top = "-100px";
+              }
+              prevScrollpos = currentScrollPos;
+          }
+  </script>
+</body>
 
-		<!-- Work -->
-			<article id="work" class="wrapper style2">
-				<div class="container">
-					<header>
-						<h2>Here's My Credentials.</h2>
-						<p>Details on my Education and Work Experience.</p>
-					</header>
-					<div class="row aln-center">
-						<div class="col-4 col-6-medium col-12-small">
-							<section class="box style1">
-								<a href="#" class="image featured"><img src="images/SIT.png" alt="" /></a>
-								<h3> Singapore Institute of Technology: Bachelors in Robotic Systems Engineering with Honours</h3>
-								<p>Specalizing in Software Development of Robotic Systems, with heavy emphasis on Systems Engineering.</p>
-							</section>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<section class="box style1">
-								<a href="#" class="image featured"><img src="images/TP.png" alt="" /></a>
-								<h3>Temasek Polytechnic: Diploma in Aerospace Engineering</h3>
-								<p>Specialzed in Aeropsace Engineering; both mechanical and electrical. Pursed the Luftansa Technical Traning to aid in Mechanical Skillset</p>
-							</section>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<section class="box style1">
-								<a href="#" class="image featured"><img src="images/collins.png" alt="" /></a>
-								<h3>Collins Aeropsace Intern</h3>
-								<p>Worked in the Aerospace Industry for 6 months to calibrate guages and create guages based on industry Engineering Drawings.</p>
-							</section>
-						</div>
-					</div>
-				</div>
-			</article>
-
-		<!-- Portfolio -->
-		<!-- Portfolio -->
-		<article id="portfolio" class="wrapper style3">
-			<div class="container">
-				<header>
-					<h2>Here’s some Projects from my time in Robotics Systems Engineering in SIT</h2>
-				</header>
-				<div class="row">
-					<div class="col-4 col-6-medium col-12-small">
-						<article class="box style2">
-							<a href="system_engineering_project_2.html" class="image featured"><img src="images/evebotpen edited drawing.png" alt="" /></a>
-							<h3><a href="system_engineering_project_2.html">Systems Engineering Project 2</a></h3>
-							<p>A System Engineering focused Project, that builts upon the foundation learnt in SEP1 to further develop Practical and Applicable System Engineering Knowledge.</p>
-						</article>
-					</div>
-				</div>
-				<footer>
-					<a href="#contact" class="button large scrolly">Get in touch with me</a>
-				</footer>
-			</div>
-		</article>
-
-
-		<!-- Contact -->
-			<article id="contact" class="wrapper style4">
-				<div class="container medium">
-					<header>
-						<h2>Contact Me!</h2>
-						<p>For Questions on my Work</p>
-					</header>
-					<div class="row">
-						<div class="col-12">
-							<form method="post" action="#">
-								<div class="row">
-									<div class="col-6 col-12-small">
-										<input type="text" name="name" id="name" placeholder="Name" />
-									</div>
-									<div class="col-6 col-12-small">
-										<input type="text" name="email" id="email" placeholder="Email" />
-									</div>
-									<div class="col-12">
-										<input type="text" name="subject" id="subject" placeholder="Subject" />
-									</div>
-									<div class="col-12">
-										<textarea name="message" id="message" placeholder="Message"></textarea>
-									</div>
-									<div class="col-12">
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" /></li>
-											<li><input type="reset" value="Clear Form" class="alt" /></li>
-										</ul>
-									</div>
-								</div>
-							</form>
-						</div>
-					</div>
-					<footer>
-						<ul id="copyright">
-							<li>&copy; Untitled. All rights reserved.</li></li>
-						</ul>
-					</footer>
-				</div>
-			</article>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
 </html>
